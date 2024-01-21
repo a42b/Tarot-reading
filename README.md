@@ -1,6 +1,7 @@
 # Tarot-reading
-simple tarot reading app using python/tkinter
+A simple tarot reading app using python/tkinter
 Start the project running main.py file
+
 First page:
 ![image](https://github.com/a42b/Tarot-reading/assets/114471854/65570767-01e6-4404-a3fb-08707aeb1a35)
 Here you can choose out of two options:
