@@ -1,5 +1,6 @@
 # Tarot-reading
 A simple tarot reading app using python/tkinter
+
 Start the project running main.py file
 
 First page:
