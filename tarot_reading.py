@@ -4,6 +4,17 @@ import random
 from PIL import Image, ImageTk
 
 def load_image(file_path, width, height):
+  """
+  load an image from a file path and resize it.
+
+  parameters:
+  - file_path (str): the path to the image file.
+  - width (int): the desired width of the image.
+  - height (int): the desired height of the image.
+
+  returns:
+  - ImageTk.PhotoImage: the resized image wrapped in a PhotoImage object.
+  """
   img = (Image.open(file_path))
   resized_image = img.resize((180, 80), Image.LANCZOS)
   return ImageTk.PhotoImage(resized_image)
@@ -68,4 +79,3 @@ class TarotApp:
   def flip_card(self, label):
     # Flip the card by swapping the images
     label['image'], label.flipped_image = label.flipped_image, label['image']
-

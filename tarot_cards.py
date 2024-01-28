@@ -4,7 +4,16 @@ from PIL import Image, ImageTk
 
 # Function to load images using PIL
 def load_image(file_path):
-  img = (Image.open(file_path))
+  """
+  Load an image from a file path and resize it.
+
+  Parameters:
+  - file_path (str): The path to the image file.
+
+  Returns:
+  - ImageTk.PhotoImage: The resized image wrapped in a PhotoImage object.
+  """
+  img = Image.open(file_path)
   resized_image = img.resize((200, 400), Image.LANCZOS)
   return ImageTk.PhotoImage(resized_image)
 
@@ -113,7 +122,6 @@ tarot_cards = [
   king_coins, queen_coins, knight_coins, knave_coins,
   ace_coins, two_coins, three_coins, four_coins, five_coins,
   six_coins, seven_coins, eight_coins, nine_coins, ten_coins,
-
   king_swords, queen_swords, knight_swords, knave_swords,
   ace_swords, two_swords, three_swords, four_swords, five_swords,
   six_swords, seven_swords, eight_swords, nine_swords, ten_swords
@@ -134,4 +142,4 @@ positive_cards = [
   king_swords, queen_swords, knight_swords, knave_swords,
   ace_swords, two_swords, three_swords, four_swords, five_swords,
   six_swords, seven_swords, eight_swords, nine_swords, ten_swords
-] 
+]

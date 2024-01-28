@@ -4,11 +4,20 @@ from PIL import Image, ImageTk
 
 # Function to load images using PIL
 def load_image(file_path):
+  """
+  Load an image from a file path and resize it.
+
+  Parameters:
+  - file_path (str): The path to the image file.
+
+  Returns:
+  - ImageTk.PhotoImage: The resized image wrapped in a PhotoImage object.
+  """
   img = (Image.open(file_path))
   resized_image = img.resize((200, 200), Image.LANCZOS)
   return ImageTk.PhotoImage(resized_image)
 
-# Card Illustrations
+# Card Illustrations (Flipped)
 magician_flipped = load_image('cards_flipped/magician.png')
 popess_flipped = load_image('cards_flipped/popess.png')
 empress_flipped = load_image('cards_flipped/empress.png')
