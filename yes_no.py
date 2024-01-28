@@ -50,7 +50,7 @@ class AnswerApp:
     # Choose random cards
     card, card_flipped = random.choice(self.tarot_cards_all)
 
-    answer = "No"
+    answer = "No "
     if card in self.positive_cards:
       answer = "Yes"
 
@@ -63,18 +63,3 @@ class AnswerApp:
     # Flip the card by swapping the images
     label['image'], label.flipped_image = label.flipped_image, label['image']
 
-if __name__ == "__main__":
-  root = tk.Tk()
-
-  width = root.winfo_screenwidth()
-  height = root.winfo_screenheight()
-
-  # Setting tkinter window size
-  root.geometry("%dx%d" % (width * 0.8, height * 0.8))  # Adjusted proportions
-
-  # Load tarot card images after the Tkinter root window is created
-  from tarot_cards import tarot_cards, positive_cards
-  from tarot_cards_flipped import tarot_cards_flipped
-
-  app = AnswerApp(root, tarot_cards, tarot_cards_flipped, positive_cards)
-  root.mainloop()

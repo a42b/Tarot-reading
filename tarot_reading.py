@@ -55,37 +55,17 @@ class TarotApp:
     # Update labels with card images
     self.past_label['image'] = past_card
     self.past_label.flipped_image = past_card_flipped  # Store flipped image reference
-    self.past_label.grid(row=2, column=0, padx=self.calculate_padding())
+    self.past_label.grid(row=2, column=0, padx=10)
 
     self.present_label['image'] = present_card
     self.present_label.flipped_image = present_card_flipped
-    self.present_label.grid(row=2, column=1, padx=self.calculate_padding())
+    self.present_label.grid(row=2, column=1, padx=10)
 
     self.future_label['image'] = future_card
     self.future_label.flipped_image = future_card_flipped
-    self.future_label.grid(row=2, column=2, padx=self.calculate_padding())
+    self.future_label.grid(row=2, column=2, padx=10)
 
   def flip_card(self, label):
     # Flip the card by swapping the images
     label['image'], label.flipped_image = label.flipped_image, label['image']
 
-  def calculate_padding(self):
-    # Calculate proportional padding based on the window width
-    window_width = self.root.winfo_width()
-    padding_percentage = 0.05 
-    return int(window_width * padding_percentage)   
-
-if __name__ == "__main__":
-  root = tk.Tk()
-
-  width = root.winfo_screenwidth() 
-  height = root.winfo_screenheight()
-
-  # setting tkinter window size
-  root.geometry("%dx%d" % (width, height))
-  root['background'] = "black"
-  from tarot_cards import tarot_cards
-  from tarot_cards_flipped import tarot_cards_flipped
-
-  app = TarotApp(root, tarot_cards, tarot_cards_flipped)
-  root.mainloop()

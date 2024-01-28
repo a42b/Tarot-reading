@@ -28,6 +28,14 @@ class MainWindow:
     from tarot_cards import tarot_cards
     from tarot_cards_flipped import tarot_cards_flipped
     root = tk.Toplevel()
+    window_width, window_height = 900, 700
+    screen_width = root.winfo_screenwidth()
+    screen_height = root.winfo_screenheight()
+
+    x_coordinate = (screen_width - window_width) // 2
+    y_coordinate = (screen_height - window_height) // 2
+
+    root.geometry("%dx%d+%d+%d" % (window_width, window_height, x_coordinate, y_coordinate))
     tarot_reading.TarotApp(root, tarot_cards, tarot_cards_flipped)
 
   def launch_answer_app(self):
@@ -35,6 +43,14 @@ class MainWindow:
     from tarot_cards_flipped import tarot_cards_flipped
     from tarot_cards import positive_cards
     root = tk.Toplevel()
+    window_width, window_height = 900, 700
+    screen_width = root.winfo_screenwidth()
+    screen_height = root.winfo_screenheight()
+
+    x_coordinate = (screen_width - window_width) // 2
+    y_coordinate = (screen_height - window_height) // 2
+
+    root.geometry("%dx%d+%d+%d" % (window_width, window_height, x_coordinate, y_coordinate))
     yes_no.AnswerApp(root, tarot_cards, tarot_cards_flipped, positive_cards)
 
 if __name__ == "__main__":
